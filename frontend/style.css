@@ -1,0 +1,165 @@
+/* Custom CSS untuk mempercantik tampilan */
+
+/* Font Inter dari Google Fonts */
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Gaya dasar body - sudah ada di Tailwind tapi ini untuk penyesuaian */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-osx-font-smoothing: grayscale;
+    overflow: hidden; /* Mencegah scrollbar muncul saat animasi masuk */
+}
+
+/* Scrollbar kustom untuk daftar tamu */
+#guestListContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+#guestListContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#guestListContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#guestListContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Efek fokus pada input dan textarea */
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Warna biru Tailwind */
+}
+
+/* Gaya untuk tombol submit */
+button[type="submit"] {
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Gaya pesan respons */
+#responseMessage.success {
+    background-color: #d4edda; /* bg-green-100 */
+    color: #155724; /* text-green-800 */
+}
+
+#responseMessage.error {
+    background-color: #f8d7da; /* bg-red-100 */
+    color: #721c24; /* text-red-800 */
+}
+
+/* Penyesuaian ukuran kontainer utama */
+.bg-white.rounded-xl.shadow-2xl.p-8.max-w-2xl.w-full {
+    max-width: 450px; /* Mengurangi lebar maksimum lebih lanjut dari 500px */
+    padding: 2rem; /* Mengurangi padding dari 2.5rem */
+    opacity: 0; /* Mulai tersembunyi untuk animasi */
+    transform: translateY(20px); /* Mulai sedikit di bawah */
+    animation: fadeInUp 0.8s ease-out forwards; /* Animasi masuk */
+    animation-delay: 0.2s; /* Sedikit tunda */
+}
+
+/* Penyesuaian ukuran font dan elemen di dalam kontainer agar tetap proporsional */
+h1 {
+    font-size: 2.2rem; /* Mengurangi ukuran font judul utama */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.4s;
+}
+p {
+    font-size: 0.9rem; /* Mengurangi ukuran font paragraf */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Animasi untuk form input */
+#guestForm {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Animasi untuk judul "Daftar Tamu" */
+h2 {
+    font-size: 1.6rem; /* Mengurangi ukuran font sub-judul */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+/* Animasi untuk daftar tamu */
+#guestListContainer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* Animasi untuk pesan respons */
+#responseMessage {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.9s;
+}
+
+
+/* Keyframes Animasi */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Penyesuaian ukuran font untuk elemen input/button */
+label {
+    font-size: 0.8rem; /* Mengurangi ukuran font label */
+}
+input, textarea, button[type="submit"] {
+    font-size: 0.9rem; /* Mengurangi ukuran font input/button */
+    padding: 0.6rem 0.8rem; /* Menyesuaikan padding input/button */
+}
+
+/* Penyesuaian untuk tabel agar tetap rapi */
+#guestTable th, #guestTable td {
+    padding: 0.5rem 0.7rem; /* Mengurangi padding sel tabel */
+    font-size: 0.8rem; /* Mengurangi ukuran font teks tabel */
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media (max-width: 640px) {
+    .bg-white.rounded-xl.shadow-2xl.p-8.max-w-2xl.w-full {
+        max-width: 95%; /* Lebih fleksibel di layar sangat kecil */
+        padding: 1.2rem; /* Padding lebih kecil lagi */
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    /* Sesuaikan ukuran font lainnya sesuai kebutuhan untuk mobile */
+}
